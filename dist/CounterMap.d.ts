@@ -2,6 +2,7 @@
  * Stores values with the number of times each value was added.
  *
  * @typeParam T - The type of values to count.
+ * @complexity Space: O(n), where n is the number of stored values.
  */
 export declare class CounterMap<T> {
     private readonly map;
@@ -10,6 +11,7 @@ export declare class CounterMap<T> {
      *
      * @param value - The value to add.
      * @returns The new count for the value.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     add(value: T): number;
     /**
@@ -17,6 +19,7 @@ export declare class CounterMap<T> {
      *
      * @param value - The value to remove.
      * @returns The new count, or `0` when the value is not stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     remove(value: T): number;
     /**
@@ -24,6 +27,7 @@ export declare class CounterMap<T> {
      *
      * @param value - The value to look up.
      * @returns The count, or `0` when the value is not stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     get(value: T): number;
     /**
@@ -31,6 +35,7 @@ export declare class CounterMap<T> {
      *
      * @param value - The value to check.
      * @returns `true` when the value is stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     has(value: T): boolean;
     /**
@@ -38,34 +43,47 @@ export declare class CounterMap<T> {
      *
      * @param value - The value to delete.
      * @returns `true` when the value was stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     delete(value: T): boolean;
-    /** Removes every value and count. */
+    /**
+     * Removes every value and count.
+     *
+     * @complexity Time: O(n). Space: O(1).
+     */
     clear(): void;
     /**
      * Gets the largest count.
      *
      * @returns The largest count, or `0` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     maxCount(): number;
     /**
      * Gets the first value with the largest count.
      *
      * @returns The value, or `undefined` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     maxValue(): T | undefined;
     /**
      * Gets the smallest count.
      *
      * @returns The smallest count, or `0` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     minCount(): number;
     /**
      * Gets the first value with the smallest count.
      *
      * @returns The value, or `undefined` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     minValue(): T | undefined;
-    /** Gets the number of stored values. */
+    /**
+     * Gets the number of stored values.
+     *
+     * @complexity Time: O(1). Space: O(1).
+     */
     get size(): number;
 }

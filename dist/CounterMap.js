@@ -2,6 +2,7 @@
  * Stores values with the number of times each value was added.
  *
  * @typeParam T - The type of values to count.
+ * @complexity Space: O(n), where n is the number of stored values.
  */
 export class CounterMap {
     constructor() {
@@ -12,6 +13,7 @@ export class CounterMap {
      *
      * @param value - The value to add.
      * @returns The new count for the value.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     add(value) {
         const count = (this.map.get(value) ?? 0) + 1;
@@ -23,6 +25,7 @@ export class CounterMap {
      *
      * @param value - The value to remove.
      * @returns The new count, or `0` when the value is not stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     remove(value) {
         const count = this.map.get(value);
@@ -42,6 +45,7 @@ export class CounterMap {
      *
      * @param value - The value to look up.
      * @returns The count, or `0` when the value is not stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     get(value) {
         return this.map.get(value) ?? 0;
@@ -51,6 +55,7 @@ export class CounterMap {
      *
      * @param value - The value to check.
      * @returns `true` when the value is stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     has(value) {
         return this.map.has(value);
@@ -60,11 +65,16 @@ export class CounterMap {
      *
      * @param value - The value to delete.
      * @returns `true` when the value was stored.
+     * @complexity Time: O(1) average. Space: O(1).
      */
     delete(value) {
         return this.map.delete(value);
     }
-    /** Removes every value and count. */
+    /**
+     * Removes every value and count.
+     *
+     * @complexity Time: O(n). Space: O(1).
+     */
     clear() {
         this.map.clear();
     }
@@ -72,6 +82,7 @@ export class CounterMap {
      * Gets the largest count.
      *
      * @returns The largest count, or `0` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     maxCount() {
         let max = 0;
@@ -84,6 +95,7 @@ export class CounterMap {
      * Gets the first value with the largest count.
      *
      * @returns The value, or `undefined` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     maxValue() {
         let maxValue;
@@ -100,6 +112,7 @@ export class CounterMap {
      * Gets the smallest count.
      *
      * @returns The smallest count, or `0` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     minCount() {
         if (this.map.size === 0) {
@@ -115,6 +128,7 @@ export class CounterMap {
      * Gets the first value with the smallest count.
      *
      * @returns The value, or `undefined` when empty.
+     * @complexity Time: O(n). Space: O(1).
      */
     minValue() {
         if (this.map.size === 0) {
@@ -130,7 +144,11 @@ export class CounterMap {
         }
         return minValue;
     }
-    /** Gets the number of stored values. */
+    /**
+     * Gets the number of stored values.
+     *
+     * @complexity Time: O(1). Space: O(1).
+     */
     get size() {
         return this.map.size;
     }
