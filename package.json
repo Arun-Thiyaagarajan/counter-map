@@ -1,6 +1,6 @@
 {
   "name": "counter-map-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A generic frequency counter built on JavaScript Map",
   "type": "module",
   "main": "./dist/index.js",
