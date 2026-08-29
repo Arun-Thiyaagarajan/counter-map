@@ -7,7 +7,7 @@ A lightweight, generic frequency counter built on top of JavaScript's native `Ma
 ## Installation
 
 ```bash
-npm install counter-map
+npm install counter-map-js
 ```
 
 ## Usage
